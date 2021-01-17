@@ -2,7 +2,7 @@
 pipeline {
   agent any
   environment {
-      node = env.NODE_NAME
+      node = "${env.NODE_NAME}"
   }
   stages {
     stage("build") {
