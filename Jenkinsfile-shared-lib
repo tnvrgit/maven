@@ -1,4 +1,4 @@
-@Library('shared-lib') _ //master or whatever branch
+@Library('shared-lib') _ 
 
 pipeline{
 
