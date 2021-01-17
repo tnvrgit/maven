@@ -1,5 +1,5 @@
 node {
-    def BRANCH_NAME=dev
+    
     stage('Build') {
         
        echo "This is build stage"
