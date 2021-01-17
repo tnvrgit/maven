@@ -4,6 +4,7 @@ pipeline {
     stage("build") {
       steps {
         echo "Build stage"
+        echo "branch name iiis ${env.BRANCH_NAME} "
         script {
             def example = load "example.groovy"
             example1 = example.exampleMethod()
