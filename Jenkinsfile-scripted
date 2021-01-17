@@ -2,7 +2,7 @@
 pipeline {
   agent any
   environment {
-      node = "${env.NODE_NAME}"
+      branch = "${env.GIT_BRANCH}"
   }
   stages {
     stage("build") {
