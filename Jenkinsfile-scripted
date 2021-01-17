@@ -8,7 +8,7 @@ pipeline {
     stage("build") {
       steps {
         echo "Build stage"
-        echo "branch name iiis ${node} "
+        echo "branch name iiis ${branch} "
         script {
             def example = load "example.groovy"
             example1 = example.exampleMethod()
@@ -18,7 +18,7 @@ pipeline {
     stage("Test") {
         when {
             expression {
-                env.BRANCH_NAME == 'master'
+                ${env.BRANCH_NAME} == 'master'
             }
         }
       steps {
