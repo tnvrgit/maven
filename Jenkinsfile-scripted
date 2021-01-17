@@ -10,9 +10,14 @@ pipeline {
         }
       }
     }
-    stage("deploy") {
+    stage("Test") {
+        when {
+            expression {
+                BRANCH_NAME == 'master'
+            }
+        }
       steps {
-        echo "Deploy stage"
+        echo "Test stage"
       }
     }
   }
