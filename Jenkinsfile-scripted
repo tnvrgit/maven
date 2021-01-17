@@ -1,11 +1,11 @@
-def branch = env.GIT_BRANCH
+def node = env.NODE_NAME
 pipeline {
   agent any
   stages {
     stage("build") {
       steps {
         echo "Build stage"
-        echo "branch name iiis ${branch} "
+        echo "branch name iiis ${node} "
         script {
             def example = load "example.groovy"
             example1 = example.exampleMethod()
