@@ -5,11 +5,6 @@ node {
        echo "This is build stage"
     }
     stage("test") {
-      when {
-        expression {
-          BRANCH_NAME=dev
-        }
-      }
       steps {
         echo "Test stage"
       }
