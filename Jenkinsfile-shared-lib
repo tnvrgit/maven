@@ -32,7 +32,7 @@ pipeline{
             stage ('Check parameter') {
                     steps {
                         echo "${params.environment}"
-                        jsontest ("${params.environment}")
+                        json-test ("${params.environment}")
                     }
             }  
           }
