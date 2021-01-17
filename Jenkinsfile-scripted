@@ -1,6 +1,17 @@
 node {
+    def BRANCH_NAME=dev
     stage('Build') {
         
        echo "This is build stage"
+    }
+    stage("test") {
+      when {
+        expression {
+          BRANCH_NAME=dev
+        }
+      }
+      steps {
+        echo "Test stage"
+      }
     }
 }
