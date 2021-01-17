@@ -7,15 +7,21 @@ pipeline{
             branch = "${env.GIT_BRANCH}"
         }
         stages {
-         stage('maven build'){
+            stage('Git Checkout'){
+                  steps{
+                     git credentialsId: 'git-creds', url: 'https://github.com/tnvrgit/maven' 
+               	     }  
+                 }	
+            stage('maven build'){
                   steps{
                       script{
-		    	                sh "mvn clean install"
+		    	                cd myapp
+                                sh "mvn clean install"
                       	  }
                	     }  
                  }	
                  
-                 stage ('Check logs') {
+               stage ('Check logs') {
                     steps {
                         filterLogs ('WARNING', 1)
                     }
