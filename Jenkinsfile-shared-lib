@@ -6,6 +6,9 @@ pipeline{
         environment {
             branch = "${env.GIT_BRANCH}"
         }
+        tools {
+            maven 'maven'
+        }
         stages {
             stage('Git Checkout'){
                   steps{
@@ -14,10 +17,8 @@ pipeline{
                  }	
             stage('maven build'){
                   steps{
-
-		    	                cd myapp
-                                sh "mvn clean install"
-
+                        sh 'echo maven stage'
+                        sh 'mvn clean install'
                	     }  
                  }	
                  
