@@ -5,8 +5,6 @@ node {
        echo "This is build stage"
     }
     stage("test") {
-      steps {
         echo "Test stage"
-      }
     }
 }
