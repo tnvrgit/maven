@@ -1,6 +1,5 @@
 pipeline {
   agent any
-  def BRANCH_NAME=def
   stages {
     stage("build") {
       steps {

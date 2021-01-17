@@ -1,4 +1,4 @@
-@Library('shared-lib@main') _ //master or whatever branch
+@Library('shared-lib@master') _ //master or whatever branch
 
 pipeline{
 
@@ -23,7 +23,7 @@ pipeline{
                  }	
             stage ('Check logs') {
                     steps {
-                        filterLogs ('skip', 1)
+                        filterLogs ('WARNING', 1)
                     }
                 }     
 
