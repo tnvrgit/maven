@@ -9,6 +9,9 @@ pipeline{
         tools {
             maven 'maven'
         }
+        parameters {
+            choice (name: 'environment', choices: ['sit1', 'sit2'])
+        }
         stages {
             stage('Git Checkout'){
                   steps{
@@ -26,7 +29,12 @@ pipeline{
                         filterLogs ('WARNING', 1)
                     }
                 }     
-
+            stage ('Check parameter') {
+                    steps {
+                        echo "${params.environment}"
+                        jsontest ("${params.environment}")
+                    }
+            }  
           }
    	     	         
 }
