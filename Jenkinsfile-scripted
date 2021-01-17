@@ -5,7 +5,7 @@ pipeline {
       branch = "${env.GIT_BRANCH}"
   }
   stages {
-    stage("build") {
+    stage("build-dummy") {
       steps {
         echo "Build stage"
         echo "branch name iiis ${branch} "
@@ -15,7 +15,7 @@ pipeline {
         }
       }
     }
-    stage("Test") {
+    stage("Test-dummy") {
         when {
             expression {
                 "${env.GIT_BRANCH}" == 'origin/master'
@@ -24,6 +24,10 @@ pipeline {
       steps {
         echo "Test stage"
       }
+    }
+    stage("checkout") {
+      
+        
     }
   }
 }
