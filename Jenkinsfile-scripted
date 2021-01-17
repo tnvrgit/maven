@@ -1,0 +1,9 @@
+node any
+
+stages {
+  stage("build"){
+    steps {
+      echo "Hello this is build stage"
+    }
+  }
+}
