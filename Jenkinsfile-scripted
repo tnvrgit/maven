@@ -1,6 +1,9 @@
-def node = env.NODE_NAME
+
 pipeline {
   agent any
+  environment {
+      node = env.NODE_NAME
+  }
   stages {
     stage("build") {
       steps {
